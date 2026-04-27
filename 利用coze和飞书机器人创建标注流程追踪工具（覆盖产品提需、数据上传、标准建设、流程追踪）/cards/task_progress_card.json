@@ -1,0 +1,54 @@
+{
+  "name": "task_progress_card",
+  "dsl": {
+    "schema": "2.0",
+    "header": {
+      "title": { "tag": "plain_text", "content": "任务推进阶段" },
+      "template": "green"
+    },
+    "body": {
+      "elements": [
+        {
+          "tag": "markdown",
+          "content": "**任务推进提醒**：请跟进当前阶段任务并及时更新进度。"
+        },
+        {
+          "tag": "column_set",
+          "columns": [
+            {
+              "tag": "column",
+              "elements": [
+                { "tag": "markdown", "content": "**当前阶段：** {{当前阶段}}" },
+                { "tag": "markdown", "content": "**关联需求：** {{关联需求}}" },
+                { "tag": "markdown", "content": "**动作清单：** {{动作清单}}" }
+              ]
+            },
+            {
+              "tag": "column",
+              "elements": [
+                { "tag": "markdown", "content": "**负责人：** {{负责人}}" },
+                { "tag": "markdown", "content": "**到期时间：** {{到期时间}}" },
+                { "tag": "markdown", "content": "**相关数据批次：** {{数据批次号}}" }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "markdown",
+          "content": "在任务视图中更新任务状态，完成后勾选完成标记。"
+        },
+        {
+          "tag": "button",
+          "text": { "tag": "plain_text", "content": "打开任务视图" },
+          "type": "primary",
+          "behaviors": [
+            {
+              "type": "open_url",
+              "default_url": "https://bytedance.larkoffice.com/base/DQE2bkPVba3cI5sh30ocyGh8ngh?table=tblaPTRyF17yH4Mx&view=vewnCnZg7r"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

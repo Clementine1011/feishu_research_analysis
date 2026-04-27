@@ -1,0 +1,54 @@
+{
+  "name": "standard_review_card",
+  "dsl": {
+    "schema": "2.0",
+    "header": {
+      "title": { "tag": "plain_text", "content": "标准评审阶段" },
+      "template": "blue"
+    },
+    "body": {
+      "elements": [
+        {
+          "tag": "markdown",
+          "content": "**标准评审提醒**：请完成标准内容评审与结论确认。"
+        },
+        {
+          "tag": "column_set",
+          "columns": [
+            {
+              "tag": "column",
+              "elements": [
+                { "tag": "markdown", "content": "**标准名称：** {{标准名称}}" },
+                { "tag": "markdown", "content": "**版本号：** {{版本号}}" },
+                { "tag": "markdown", "content": "**标准类型：** {{标准类型}}" }
+              ]
+            },
+            {
+              "tag": "column",
+              "elements": [
+                { "tag": "markdown", "content": "**关联需求：** {{关联需求}}" },
+                { "tag": "markdown", "content": "**计划生效日期：** {{生效日期}}" },
+                { "tag": "markdown", "content": "**当前评审结论：** {{评审结论}}" }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "markdown",
+          "content": "在多维表中填写评审结论与变更记录。"
+        },
+        {
+          "tag": "button",
+          "text": { "tag": "plain_text", "content": "打开待评审视图" },
+          "type": "primary",
+          "behaviors": [
+            {
+              "type": "open_url",
+              "default_url": "https://bytedance.larkoffice.com/base/DQE2bkPVba3cI5sh30ocyGh8ngh?table=tblRTeia2FmK8l77&view=vewBoeJkBO"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

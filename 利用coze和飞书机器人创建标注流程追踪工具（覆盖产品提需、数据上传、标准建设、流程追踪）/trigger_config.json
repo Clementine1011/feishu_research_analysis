@@ -1,0 +1,51 @@
+[
+  {
+    "table_id": "tbl80c6U7FSZDnBx",
+    "condition": {
+      "description": "当「状态」从其他值变更为「待上传」时触发",
+      "type": "value_change",
+      "field_name": "状态",
+      "from": ["提需中", "标准建设", "执行中", "已完成", "已关闭"],
+      "to": ["待上传"]
+    },
+    "card_file": "cards/upload_card.json",
+    "card_id": "7633316621869796550",
+    "target_view_url": "https://bytedance.larkoffice.com/base/DQE2bkPVba3cI5sh30ocyGh8ngh?table=tbl80c6U7FSZDnBx&view=vew8Qso4ai"
+  },
+  {
+    "table_id": "tblTytNnabjCkezy",
+    "condition": {
+      "description": "当「校验状态」为「待校验」或「失败」时触发",
+      "type": "record_update",
+      "field_name": "校验状态",
+      "in": ["待校验", "失败"]
+    },
+    "card_file": "cards/task_progress_card.json",
+    "card_id": "7633316627949915361",
+    "target_view_url": "https://bytedance.larkoffice.com/base/DQE2bkPVba3cI5sh30ocyGh8ngh?table=tblTytNnabjCkezy&view=vewRtrWchK"
+  },
+  {
+    "table_id": "tblRTeia2FmK8l77",
+    "condition": {
+      "description": "当「评审结论」为「待评审」时触发",
+      "type": "record_update",
+      "field_name": "评审结论",
+      "equals": "待评审"
+    },
+    "card_file": "cards/standard_review_card.json",
+    "card_id": "7633316626079271895",
+    "target_view_url": "https://bytedance.larkoffice.com/base/DQE2bkPVba3cI5sh30ocyGh8ngh?table=tblRTeia2FmK8l77&view=vewBoeJkBO"
+  },
+  {
+    "table_id": "tblaPTRyF17yH4Mx",
+    "condition": {
+      "description": "当「完成标记」为 true，且关联需求状态未到「已完成」时触发（跨表校验由实现侧处理）",
+      "type": "record_update",
+      "field_name": "完成标记",
+      "equals": true
+    },
+    "card_file": "cards/request_card.json",
+    "card_id": "7633316617641217245",
+    "target_view_url": "https://bytedance.larkoffice.com/base/DQE2bkPVba3cI5sh30ocyGh8ngh?table=tblaPTRyF17yH4Mx&view=vewnCnZg7r"
+  }
+]

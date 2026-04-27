@@ -1,0 +1,455 @@
+{
+  "app_token": "DQE2bkPVba3cI5sh30ocyGh8ngh",
+  "base_url": "https://bytedance.larkoffice.com/base/DQE2bkPVba3cI5sh30ocyGh8ngh",
+  "tables": [
+    {
+      "table_name": "需求主表",
+      "table_id": "tbl80c6U7FSZDnBx",
+      "fields": [
+        {
+          "field_id": "fldzDIYMPQ",
+          "field_name": "需求编号",
+          "type": 1,
+          "ui_type": "Text",
+          "is_primary": true,
+          "property": null
+        },
+        {
+          "field_id": "fldJArcFD7",
+          "field_name": "标题",
+          "type": 1,
+          "ui_type": "Text",
+          "is_primary": false,
+          "property": null
+        },
+        {
+          "field_id": "fld64LoZUJ",
+          "field_name": "提需人",
+          "type": 11,
+          "ui_type": "User",
+          "is_primary": false,
+          "property": {"multiple": false}
+        },
+        {
+          "field_id": "fldqz4tW7b",
+          "field_name": "所属产品/场景",
+          "type": 1,
+          "ui_type": "Text",
+          "is_primary": false,
+          "property": null
+        },
+        {
+          "field_id": "fldkSwVNYK",
+          "field_name": "优先级",
+          "type": 3,
+          "ui_type": "SingleSelect",
+          "is_primary": false,
+          "property": {
+            "options": [
+              {"name": "P0"},
+              {"name": "P1"},
+              {"name": "P2"}
+            ]
+          }
+        },
+        {
+          "field_id": "fldz7BiABF",
+          "field_name": "期望上线时间",
+          "type": 5,
+          "ui_type": "DateTime",
+          "is_primary": false,
+          "property": {
+            "date_formatter": "yyyy-MM-dd",
+            "auto_fill": false
+          }
+        },
+        {
+          "field_id": "fld9wYp1xA",
+          "field_name": "描述",
+          "type": 1,
+          "ui_type": "Text",
+          "is_primary": false,
+          "property": null
+        },
+        {
+          "field_id": "flddIH0SYD",
+          "field_name": "状态",
+          "type": 3,
+          "ui_type": "SingleSelect",
+          "is_primary": false,
+          "property": {
+            "options": [
+              {"name": "提需中"},
+              {"name": "待上传"},
+              {"name": "标准建设"},
+              {"name": "执行中"},
+              {"name": "已完成"},
+              {"name": "已关闭"}
+            ]
+          }
+        },
+        {
+          "field_id": "fldTvxzFrV",
+          "field_name": "SLA",
+          "type": 20,
+          "ui_type": "Formula",
+          "is_primary": false,
+          "property": {
+            "formula_expression": "DATETIME_DIFF([期望上线时间], TODAY(), \"days\")"
+          }
+        },
+        {
+          "field_id": "fldqEUCMH5",
+          "field_name": "关联标准",
+          "type": 18,
+          "ui_type": "SingleLink",
+          "is_primary": false,
+          "property": {
+            "table_id": "tblRTeia2FmK8l77",
+            "table_name": "标准建设表",
+            "multiple": true
+          }
+        },
+        {
+          "field_id": "fld5BcnoQE",
+          "field_name": "附件",
+          "type": 17,
+          "ui_type": "Attachment",
+          "is_primary": false,
+          "property": null
+        }
+      ],
+      "views": [
+        {
+          "view_id": "vewImJVYxY",
+          "view_name": "表格",
+          "view_type": "grid"
+        },
+        {
+          "view_id": "vew8Qso4ai",
+          "view_name": "进行中",
+          "view_type": "grid"
+        },
+        {
+          "view_id": "vewGKgcJPZ",
+          "view_name": "已完成/已关闭",
+          "view_type": "grid"
+        }
+      ]
+    },
+    {
+      "table_name": "数据上传表",
+      "table_id": "tblTytNnabjCkezy",
+      "fields": [
+        {
+          "field_id": "fldE5CUeqz",
+          "field_name": "数据批次号",
+          "type": 1,
+          "ui_type": "Text",
+          "is_primary": true,
+          "property": null
+        },
+        {
+          "field_id": "fldcYJd8yq",
+          "field_name": "上传人",
+          "type": 11,
+          "ui_type": "User",
+          "is_primary": false,
+          "property": {"multiple": false}
+        },
+        {
+          "field_id": "fldKZNKM8s",
+          "field_name": "数据范围",
+          "type": 1,
+          "ui_type": "Text",
+          "is_primary": false,
+          "property": null
+        },
+        {
+          "field_id": "fldyMRH9pt",
+          "field_name": "样本量",
+          "type": 2,
+          "ui_type": "Number",
+          "is_primary": false,
+          "property": {"formatter": "0"}
+        },
+        {
+          "field_id": "fld7LEj1yx",
+          "field_name": "数据来源",
+          "type": 3,
+          "ui_type": "SingleSelect",
+          "is_primary": false,
+          "property": {
+            "options": [
+              {"name": "业务库"},
+              {"name": "采集"},
+              {"name": "第三方"}
+            ]
+          }
+        },
+        {
+          "field_id": "fldVslyxH8",
+          "field_name": "校验状态",
+          "type": 3,
+          "ui_type": "SingleSelect",
+          "is_primary": false,
+          "property": {
+            "options": [
+              {"name": "待校验"},
+              {"name": "通过"},
+              {"name": "失败"}
+            ]
+          }
+        },
+        {
+          "field_id": "fldEBClrZT",
+          "field_name": "异常计数",
+          "type": 2,
+          "ui_type": "Number",
+          "is_primary": false,
+          "property": {"formatter": "0"}
+        },
+        {
+          "field_id": "fldkuPFFde",
+          "field_name": "质检报告",
+          "type": 17,
+          "ui_type": "Attachment",
+          "is_primary": false,
+          "property": null
+        },
+        {
+          "field_id": "flda8rBzLx",
+          "field_name": "关联需求",
+          "type": 18,
+          "ui_type": "SingleLink",
+          "is_primary": false,
+          "property": {
+            "table_id": "tbl80c6U7FSZDnBx",
+            "table_name": "需求主表",
+            "multiple": false
+          }
+        },
+        {
+          "field_id": "fld91ugCqa",
+          "field_name": "创建时间",
+          "type": 1001,
+          "ui_type": "CreatedTime",
+          "is_primary": false,
+          "property": {
+            "date_formatter": "yyyy-MM-dd HH:mm"
+          }
+        }
+      ],
+      "views": [
+        {
+          "view_id": "vewsfVB5z4",
+          "view_name": "表格",
+          "view_type": "grid"
+        },
+        {
+          "view_id": "vewRtrWchK",
+          "view_name": "待校验",
+          "view_type": "grid"
+        },
+        {
+          "view_id": "vewg0OLR3S",
+          "view_name": "校验失败",
+          "view_type": "grid"
+        }
+      ]
+    },
+    {
+      "table_name": "标准建设表",
+      "table_id": "tblRTeia2FmK8l77",
+      "fields": [
+        {
+          "field_id": "fldo9GYxUb",
+          "field_name": "标准名称",
+          "type": 1,
+          "ui_type": "Text",
+          "is_primary": true,
+          "property": null
+        },
+        {
+          "field_id": "fldkQbKxx8",
+          "field_name": "版本号",
+          "type": 1,
+          "ui_type": "Text",
+          "is_primary": false,
+          "property": null
+        },
+        {
+          "field_id": "fldn11mNzG",
+          "field_name": "标准Owner",
+          "type": 11,
+          "ui_type": "User",
+          "is_primary": false,
+          "property": {"multiple": false}
+        },
+        {
+          "field_id": "fldSUaDEpt",
+          "field_name": "标准类型",
+          "type": 3,
+          "ui_type": "SingleSelect",
+          "is_primary": false,
+          "property": {
+            "options": [
+              {"name": "命名"},
+              {"name": "字段"},
+              {"name": "打标规则"},
+              {"name": "其他"}
+            ]
+          }
+        },
+        {
+          "field_id": "fldBEiOspJ",
+          "field_name": "评审结论",
+          "type": 3,
+          "ui_type": "SingleSelect",
+          "is_primary": false,
+          "property": {
+            "options": [
+              {"name": "待评审"},
+              {"name": "通过"},
+              {"name": "驳回"}
+            ]
+          }
+        },
+        {
+          "field_id": "fldPheTr9S",
+          "field_name": "生效日期",
+          "type": 5,
+          "ui_type": "DateTime",
+          "is_primary": false,
+          "property": {
+            "date_formatter": "yyyy-MM-dd",
+            "auto_fill": false
+          }
+        },
+        {
+          "field_id": "fldSRxpOz3",
+          "field_name": "关联需求",
+          "type": 18,
+          "ui_type": "SingleLink",
+          "is_primary": false,
+          "property": {
+            "table_id": "tbl80c6U7FSZDnBx",
+            "table_name": "需求主表",
+            "multiple": true
+          }
+        },
+        {
+          "field_id": "fld9qfNM8K",
+          "field_name": "变更记录",
+          "type": 1,
+          "ui_type": "Text",
+          "is_primary": false,
+          "property": null
+        }
+      ],
+      "views": [
+        {
+          "view_id": "vewKhqsico",
+          "view_name": "表格",
+          "view_type": "grid"
+        },
+        {
+          "view_id": "vewBoeJkBO",
+          "view_name": "待评审",
+          "view_type": "grid"
+        },
+        {
+          "view_id": "vewoKrkIYl",
+          "view_name": "已通过",
+          "view_type": "grid"
+        }
+      ]
+    },
+    {
+      "table_name": "过程追踪/任务表",
+      "table_id": "tblaPTRyF17yH4Mx",
+      "fields": [
+        {
+          "field_id": "fldmCyO6yF",
+          "field_name": "当前阶段",
+          "type": 3,
+          "ui_type": "SingleSelect",
+          "is_primary": true,
+          "property": {
+            "options": [
+              {"name": "提需"},
+              {"name": "数据上传"},
+              {"name": "标准建设"},
+              {"name": "执行"},
+              {"name": "验收"}
+            ]
+          }
+        },
+        {
+          "field_id": "fldAMU0Ycl",
+          "field_name": "负责人",
+          "type": 11,
+          "ui_type": "User",
+          "is_primary": false,
+          "property": {"multiple": false}
+        },
+        {
+          "field_id": "fld0LBirV4",
+          "field_name": "到期时间",
+          "type": 5,
+          "ui_type": "DateTime",
+          "is_primary": false,
+          "property": {
+            "date_formatter": "yyyy-MM-dd",
+            "auto_fill": false
+          }
+        },
+        {
+          "field_id": "fldS0ek49a",
+          "field_name": "动作清单",
+          "type": 1,
+          "ui_type": "Text",
+          "is_primary": false,
+          "property": null
+        },
+        {
+          "field_id": "flde1YMaRd",
+          "field_name": "完成标记",
+          "type": 7,
+          "ui_type": "Checkbox",
+          "is_primary": false,
+          "property": null
+        },
+        {
+          "field_id": "fldCACAKbX",
+          "field_name": "关联需求",
+          "type": 18,
+          "ui_type": "SingleLink",
+          "is_primary": false,
+          "property": {
+            "table_id": "tbl80c6U7FSZDnBx",
+            "table_name": "需求主表",
+            "multiple": false
+          }
+        }
+      ],
+      "views": [
+        {
+          "view_id": "vewmYqKeGZ",
+          "view_name": "表格",
+          "view_type": "grid"
+        },
+        {
+          "view_id": "vewnCnZg7r",
+          "view_name": "我的待办",
+          "view_type": "grid"
+        },
+        {
+          "view_id": "vewjQfLsXz",
+          "view_name": "本周到期",
+          "view_type": "grid"
+        }
+      ]
+    }
+  ]
+}

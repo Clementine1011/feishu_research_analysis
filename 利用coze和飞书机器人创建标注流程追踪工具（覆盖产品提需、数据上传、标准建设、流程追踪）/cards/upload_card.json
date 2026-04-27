@@ -1,0 +1,54 @@
+{
+  "name": "upload_card",
+  "dsl": {
+    "schema": "2.0",
+    "header": {
+      "title": { "tag": "plain_text", "content": "数据上传阶段" },
+      "template": "green"
+    },
+    "body": {
+      "elements": [
+        {
+          "tag": "markdown",
+          "content": "**数据上传阶段提醒**：请根据卡片提示完成数据上传与自检。"
+        },
+        {
+          "tag": "column_set",
+          "columns": [
+            {
+              "tag": "column",
+              "elements": [
+                { "tag": "markdown", "content": "**需求编号：** {{需求编号}}" },
+                { "tag": "markdown", "content": "**标题：** {{标题}}" },
+                { "tag": "markdown", "content": "**数据批次号：** {{数据批次号}}" }
+              ]
+            },
+            {
+              "tag": "column",
+              "elements": [
+                { "tag": "markdown", "content": "**上传人：** {{上传人}}" },
+                { "tag": "markdown", "content": "**数据来源：** {{数据来源}}" },
+                { "tag": "markdown", "content": "**样本量：** {{样本量}}" }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "markdown",
+          "content": "在多维表中查看待处理批次并更新校验结果。"
+        },
+        {
+          "tag": "button",
+          "text": { "tag": "plain_text", "content": "打开待校验视图" },
+          "type": "primary",
+          "behaviors": [
+            {
+              "type": "open_url",
+              "default_url": "https://bytedance.larkoffice.com/base/DQE2bkPVba3cI5sh30ocyGh8ngh?table=tblTytNnabjCkezy&view=vewRtrWchK"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
